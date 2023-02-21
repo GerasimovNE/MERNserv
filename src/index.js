@@ -5,9 +5,11 @@ const config = require("config")
 
 const app = express()
 const PORT = config.get("serverPort")
+const Url = config.get("URLbd")
 
-const start = () => {
+const start = async () => {
     try {
+        await mongoose.connect(Url)
         app.listen(PORT, () => {
             console.log("zaebalo vse ", PORT)
         })

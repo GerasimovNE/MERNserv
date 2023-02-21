@@ -1,3 +1,4 @@
 {
-    "serverPort": 3300
+    "serverPort": 3300,
+    "URLbd": "mongodb+srv://GunsmoKer12:lEOff9vNPxMAazJu@guns-merncs-cluster.bxusp6j.mongodb.net/?retryWrites=true&w=majority"
 }

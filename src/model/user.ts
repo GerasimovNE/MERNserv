@@ -1,4 +1,5 @@
-const { Schema, module } = require("mongoose")
+
+const { Schema, model } = require("mongoose")
 
 
 const user = Schema({
@@ -6,8 +7,9 @@ const user = Schema({
     password: { type: String, required: true },
     diskSpase: { type: Number, default: 1024 ** 3 * 10 },
     usedSpase: { type: Number, default: 0 },
+    JWTtoken: { type: String },
     avatar: { type: String },
-    files: [{ type: ObjectId, ref: "File" }]
+    files: [{ type: Object, ref: "File" }]
 
 })
 

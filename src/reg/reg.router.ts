@@ -18,7 +18,7 @@ router.post('/registration',
         }
         try {
             const result = await registration(request)
-            response.status(result.status).send(result.massege)
+            response.status(result.status).send(result.message)
         }
         catch {
             response.send('sosi dal`she')

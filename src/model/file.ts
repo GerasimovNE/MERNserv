@@ -1,15 +1,16 @@
-import ObjectId from "mongoose"
+import { Schema, model, Types } from 'mongoose'
 
-const file = Schema(
+
+const file = new Schema(
     {
         name: { type: String, required: true },
         type: { type: String, reauired: true },
-        accesLinc: { type: String },
+        accesLink: { type: String },
         size: { type: Number, default: 0 },
         path: { type: String, default: '' },
-        user: { type: ObjectId, ref: "User" },
-        perent: { type: ObjectId, ref: "File" },
-        childs: [{ type: ObjectId, ref: "File" }],
+        user: { type: Types.ObjectId, ref: "User" },
+        perent: { type: Types.ObjectId, ref: "File" },
+        childs: [{ type: Types.ObjectId, ref: "File" }],
     }
 )
 module.exports = model("File", file)

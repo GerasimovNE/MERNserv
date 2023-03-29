@@ -17,7 +17,8 @@ export const loginUser = async (req: Request) => {
     if (!passValid) {
         return ("invalid pass")
     }
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' })
+
+    const token = jwt.sign({ id: userValid.id }, process.env.JWT_SECRET, { expiresIn: '1h' })
     userValid.JWTtoken = token
     userValid.save()
     return ({
